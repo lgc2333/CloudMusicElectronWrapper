@@ -1,0 +1,58 @@
+{
+  "name": "cloud-music-electron-wrapper",
+  "productName": "cloud-music-electron-wrapper",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.24.0",
+  "description": "My Electron application description",
+  "author": {
+    "name": "LgCookie",
+    "email": "lgc2333@126.com"
+  },
+  "license": "MIT",
+  "keywords": [],
+  "main": ".vite/build/main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "package:arch": "cd distro/arch && makepkg -si",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "eslint .",
+    "fix": "eslint --fix .",
+    "format": "prettier -cw ."
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^6.2.0",
+    "@electron-forge/cli": "^7.10.2",
+    "@electron-forge/maker-deb": "^7.10.2",
+    "@electron-forge/maker-rpm": "^7.10.2",
+    "@electron-forge/maker-squirrel": "^7.10.2",
+    "@electron-forge/maker-zip": "^7.10.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.10.2",
+    "@electron-forge/plugin-fuses": "^7.10.2",
+    "@electron-forge/plugin-vite": "^7.10.2",
+    "@electron/fuses": "^2.0.0",
+    "@trivago/prettier-plugin-sort-imports": "^6.0.0",
+    "@types/electron-squirrel-startup": "^1.0.2",
+    "@types/node": "^24.10.1",
+    "@typescript-eslint/eslint-plugin": "^8.48.0",
+    "@typescript-eslint/parser": "^8.48.0",
+    "@unocss/eslint-plugin": "^66.5.9",
+    "electron": "^39.2.4",
+    "electron-squirrel-startup": "^1.0.1",
+    "eslint": "^9.38.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "prettier": "^3.7.1",
+    "tsx": "^4.20.6",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "electron-winstaller",
+      "esbuild"
+    ]
+  }
+}
