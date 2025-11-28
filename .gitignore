@@ -93,5 +93,5 @@ out/
 
 # distro/arch
 distro/arch/*
-!distro/arch/PKGBUILD
+!distro/arch/PKGBUILD*
 !distro/arch/cloud-music-electron-wrapper.sh
