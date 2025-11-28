@@ -14,7 +14,8 @@
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "package:arch": "pnpm package && cd distro/arch && (rm *.pkg.tar.zst || true) && makepkg -cis",
+    "package:arch": "pnpm package && pnpm package:arch:now",
+    "package:arch:now": "cd distro/arch && (rm *.pkg.tar.zst || true) && makepkg -cis",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "eslint .",

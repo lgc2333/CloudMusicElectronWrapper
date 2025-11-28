@@ -45,10 +45,10 @@ prepare() {
 # }
 package() {
     project_root="$(realpath "${srcdir}/../../..")"
-    install -Dm644 "${project_root}/out/${pkgname}-linux-"*/resources/app.asar -t "${pkgdir}/usr/lib/${pkgname}"
-    install -Dm644 "${project_root}/buildAssets/icons/icon.png" "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
+    install -Dm644 "${project_root}/out/${pkgname}-linux-"*/resources/* -t "${pkgdir}/usr/lib/${pkgname}"
     install -Dm644 "${project_root}/LICENSE" -t "${pkgdir}/usr/share/licenses/${pkgname}"
-
+    mkdir -p "${pkgdir}/usr/share/pixmaps"
+    ln -s "${pkgdir}/usr/lib/${pkgname}/icon.png" "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
     install -Dm755 "${srcdir}/${pkgname}.sh" "${pkgdir}/usr/bin/${pkgname}"
     install -Dm644 "${srcdir}/${pkgname}.desktop" -t "${pkgdir}/usr/share/applications"
 }
